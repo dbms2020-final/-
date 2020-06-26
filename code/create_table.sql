@@ -39,7 +39,7 @@ CREATE TABLE item_placed (
 );
 
 CREATE TABLE book_borrow (
-    bood_id VARCHAR,
+    book_id VARCHAR,
     user_id VARCHAR,
     lend_date DATE,
     estimated_return DATE,
