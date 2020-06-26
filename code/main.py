@@ -215,8 +215,8 @@ def button_pressed(user_id, item_id, item_type, button):
             cur.execute("""
                 UPDATE item_placed
                 SET library_id = '{}'
-                WHERE {}_id = '{}'
-            """.format(library_id, item_type, item_id))
+                WHERE item_id = '{}'
+            """.format(library_id, item_id))
             conn.commit()
         print("update done!")
 
@@ -228,7 +228,7 @@ def button_pressed(user_id, item_id, item_type, button):
         """.format(item_type , item_type , item_id))
     
         data = cur.fetchall()
-        if(data[0][0]):
+        if(not data[0][0]):
             return False
     
         cur.execute("""
